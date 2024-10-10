@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const ImageToText = () => {
   const [image, setImage] = useState<string | null>(null);
-  const [text, setText] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [text, setText] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -44,11 +44,7 @@ const ImageToText = () => {
 
       {image && (
         <div>
-          <Image
-            src={image}
-            alt="uploaded"
-            style={{ maxWidth: "400px", marginTop: "20px" }}
-          />
+          <Image src={image} alt="uploaded" width={100} height={100} />
           <button onClick={handleConvert} disabled={isLoading}>
             {isLoading ? "Converting..." : "Convert to Text"}
           </button>
