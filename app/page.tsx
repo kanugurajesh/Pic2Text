@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Tesseract from "tesseract.js";
 import Image from "next/image";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import Toggle from "@/components/toggle";
 import { useTheme } from "next-themes";
 
