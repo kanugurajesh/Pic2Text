@@ -1,4 +1,5 @@
 # Pic2Text
+Easily extract text from images and download it in .txt format. This responsive application offers a seamless, user-friendly experience with a beautifully designed interface.
 
 ## Images
 
