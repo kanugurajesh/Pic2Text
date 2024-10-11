@@ -32,6 +32,12 @@ Enjoy an intuitive, user-friendly experience with this powerful image-to-text co
 ---
 
 ## Images
+![Screenshot 2024-10-11 125526](https://github.com/user-attachments/assets/3584f8d0-86f1-4165-b124-35d7ce24a149)
+![Screenshot 2024-10-11 125534](https://github.com/user-attachments/assets/6c386431-1123-4642-9a17-4ddf74f04515)
+![Screenshot 2024-10-11 125543](https://github.com/user-attachments/assets/e2763e1e-7cc1-4080-9d93-050d4fe8fa52)
+![Screenshot 2024-10-11 125553](https://github.com/user-attachments/assets/5a600773-17ad-4a23-affb-caa6d114cea1)
+![Screenshot 2024-10-11 125602](https://github.com/user-attachments/assets/ce1c9246-f987-4f9d-afbe-2e60f13ddfef)
+![Screenshot 2024-10-11 125610](https://github.com/user-attachments/assets/d3b54fdd-d64c-4172-87fc-c75ee54eeb13)
 
 ![Screenshot 2024-10-11 123448](https://github.com/user-attachments/assets/c8265b55-e50c-4d86-91e7-202249b2a08b)
 ![Screenshot 2024-10-11 123508](https://github.com/user-attachments/assets/2e6250c3-97d6-4cc3-b144-e5cd9d35ddf9)
