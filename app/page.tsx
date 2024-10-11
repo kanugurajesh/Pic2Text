@@ -103,7 +103,7 @@ const ImageToText = () => {
         </div>
       )}
       <div className="flex flex-col gap-10 items-center min-h-screen dark:bg-black dark:text-white p-4">
-        <h1 className="font-bold text-4xl tracking-wide leading-6">
+        <h1 className="font-bold text-4xl tracking-wide leading-6 mt-20">
           Pic2Text
         </h1>
 
