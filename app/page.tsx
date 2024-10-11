@@ -30,6 +30,15 @@ const ImageToText = () => {
     fileInput?.click();
   };
 
+  const handleDownloadText = () => {
+    const element = document.createElement("a");
+    const file = new Blob([text], { type: "text/plain" });
+    element.href = URL.createObjectURL(file);
+    element.download = "converted-text.txt";
+    document.body.appendChild(element);
+    element.click();
+  };
+
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     console.log(file?.name);
@@ -118,7 +127,19 @@ const ImageToText = () => {
         )}
       </div>
 
-      {text && <code>{text}</code>}
+      {text && (
+        <code className="shadow-sm p-5 rounded-md shadow-gray-600 flex flex-col gap-4 items-center">
+          <span className="font-extrabold text-lg">Converted Text</span>
+          <span>{text}</span>
+          <button
+            className="bg-black p-2 px-4 rounded-md text-white flex gap-2 items-center"
+            onClick={handleDownloadText}
+          >
+            <Image src="/download.svg" alt="download" width={22} height={22} />
+            <span>Download</span>
+          </button>
+        </code>
+      )}
     </div>
   );
 };
