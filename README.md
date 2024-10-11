@@ -31,6 +31,32 @@ Enjoy an intuitive, user-friendly experience with this powerful image-to-text co
 
 ---
 
+## 🚀 Quick Start
+
+### 📦 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/Pic2Text.git
+   ```
+2. Change the directory
+   ```bash
+   cd Pic2Text
+   ```
+3. Install the packages
+   ```bash
+   npm install
+   ```
+4. Run the project
+   ```bash
+   npm run dev
+   ```
+   
+## 🧰 Tech Stack
+🖥️ **Frontend**: Next.js, TypeScript, Tailwind CSS  
+
+---
+
 ## Images
 ![Screenshot 2024-10-11 125526](https://github.com/user-attachments/assets/3584f8d0-86f1-4165-b124-35d7ce24a149)
 ![Screenshot 2024-10-11 125534](https://github.com/user-attachments/assets/6c386431-1123-4642-9a17-4ddf74f04515)
