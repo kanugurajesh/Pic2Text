@@ -132,7 +132,7 @@ const ImageToText = () => {
         <div className="flex flex-col gap-4 items-center min-[440px]:flex-row">
           <button
             onClick={handleButtonClick}
-            className="p-2 bg-black text-white dark:bg-white dark:text-black flex gap-2 items-center px-4 rounded-full font-bold border-2 border-black hover:scale-105 transition-all ease-in-out duration-300"
+            className="p-2 bg-black text-white dark:bg-white dark:text-black flex gap-2 items-center px-4 rounded-full font-bold border-2 border-black"
           >
             <Image
               src={theme === "dark" ? "/upload-dark.svg" : "/upload.svg"}
@@ -147,7 +147,7 @@ const ImageToText = () => {
             <button
               onClick={handleConvert}
               disabled={isLoading}
-              className={`p-[10px] bg-black text-white dark:bg-white dark:text-black flex gap-2 items-center px-4 rounded-full font-bold hover:scale-105 transition-all ease-in-out duration-300 ${
+              className={`p-[10px] bg-black text-white dark:bg-white dark:text-black flex gap-2 items-center px-4 rounded-full font-bold ${
                 isLoading && "cursor-wait"
               }`}
             >
