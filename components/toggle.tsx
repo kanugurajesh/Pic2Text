@@ -1,10 +1,18 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const Toggle = () => {
   const { theme, setTheme } = useTheme();
+
+  // Set a default theme
+  useEffect(() => {
+    if (theme == null) {
+      setTheme("light");
+    }
+  }, []);
 
   const changeTheme = () => {
     toast.dismiss();
