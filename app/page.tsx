@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Tesseract from "tesseract.js";
 import Image from "next/image";
 import toast, { Toaster } from "react-hot-toast";
+import Toggle from "@/components/toggle";
 
 const ImageToText = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -68,79 +69,89 @@ const ImageToText = () => {
   };
 
   return (
-    <div className="container flex flex-col gap-10 items-center p-4">
-      <Toaster />
-      <h1 className="font-bold text-4xl mt-10 tracking-wide leading-6">
-        Pic2Text
-      </h1>
+    <main className="relative">
+      <div className="absolute top-4 right-4">
+        <Toggle />
+      </div>
+      <div className="container flex flex-col gap-10 items-center min-h-screen dark:bg-black dark:text-white p-4">
+        <Toaster />
+        <h1 className="font-bold text-4xl mt-6 tracking-wide leading-6">
+          Pic2Text
+        </h1>
 
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleImageUpload}
-        onClick={() => setText("")}
-        className="hidden"
-        id="file"
-      />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+          onClick={() => setText("")}
+          className="hidden"
+          id="file"
+        />
 
-      {image && (
-        <div className="flex flex-col gap-4 items-center">
-          <Image
-            src={image}
-            alt="uploaded"
-            width={300}
-            height={300}
-            className="rounded-md"
-          />
-        </div>
-      )}
-
-      <div className="flex gap-4 items-center">
-        <button
-          onClick={handleButtonClick}
-          className="p-[6px] bg-black text-white flex gap-2 items-center px-4 rounded-full font-bold border-2 border-black"
-        >
-          <Image
-            src="/upload.svg"
-            alt="upload"
-            width={25}
-            height={25}
-            className="fill-white"
-          />
-          <span>{image ? "Change Image" : "Upload Image"}</span>
-        </button>
         {image && (
+          <div className="flex flex-col gap-4 items-center">
+            <Image
+              src={image}
+              alt="uploaded"
+              width={300}
+              height={300}
+              className="rounded-md shadow-sm shadow-gray-600 cursor-pointer"
+            />
+          </div>
+        )}
+
+        <div className="flex gap-4 items-center">
           <button
-            onClick={handleConvert}
-            disabled={isLoading}
-            className="p-2 bg-black text-white flex gap-2 items-center px-4 rounded-full font-bold"
+            onClick={handleButtonClick}
+            className="p-[6px] bg-black text-white flex gap-2 items-center px-4 rounded-full font-bold border-2 border-black"
           >
             <Image
-              src="/convert.svg"
+              src="/upload.svg"
               alt="upload"
-              width={22}
-              height={22}
+              width={25}
+              height={25}
               className="fill-white"
             />
-            <span>{isLoading ? "Converting..." : "Convert to Text"}</span>
+            <span>{image ? "Change Image" : "Upload Image"}</span>
           </button>
+          {image && (
+            <button
+              onClick={handleConvert}
+              disabled={isLoading}
+              className="p-2 bg-black text-white flex gap-2 items-center px-4 rounded-full font-bold"
+            >
+              <Image
+                src="/convert.svg"
+                alt="upload"
+                width={22}
+                height={22}
+                className="fill-white"
+              />
+              <span>{isLoading ? "Converting..." : "Convert to Text"}</span>
+            </button>
+          )}
+        </div>
+
+        {text && (
+          <code className="shadow-sm p-5 rounded-md shadow-gray-600 flex flex-col gap-4 items-center">
+            <span className="font-extrabold text-lg">Converted Text</span>
+            <span>{text}</span>
+            <button
+              className="bg-black p-2 px-4 rounded-md text-white flex gap-2 items-center"
+              onClick={handleDownloadText}
+            >
+              <Image
+                src="/download.svg"
+                alt="download"
+                width={22}
+                height={22}
+              />
+              <span>Download</span>
+            </button>
+          </code>
         )}
       </div>
-
-      {text && (
-        <code className="shadow-sm p-5 rounded-md shadow-gray-600 flex flex-col gap-4 items-center">
-          <span className="font-extrabold text-lg">Converted Text</span>
-          <span>{text}</span>
-          <button
-            className="bg-black p-2 px-4 rounded-md text-white flex gap-2 items-center"
-            onClick={handleDownloadText}
-          >
-            <Image src="/download.svg" alt="download" width={22} height={22} />
-            <span>Download</span>
-          </button>
-        </code>
-      )}
-    </div>
+    </main>
   );
 };
 
